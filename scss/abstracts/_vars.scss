@@ -1,0 +1,25 @@
+@use './functions' as f;
+
+$clr-primary: #ff7657;
+$body-bg: #121212;
+$clr-text: #fff;
+$clr-text-light: #787878;
+$clr-light-black: #161616;
+
+//bp
+$bp-tablet: f.toRem(600);
+$bp-desktop: f.toRem(1000);
+
+$max-width: f.toRem(1220);
+
+// Fonts
+$ff-bold: 'Poppins-Bold';
+$ff-regular: 'Poppins-Regular';
+
+// Preloader
+$dot-width: f.toRem(100);
+$dot-height: $dot-width;
+$dot-bg: #fff;
+
+$duration: 300ms;
+$timing: ease-in-out;

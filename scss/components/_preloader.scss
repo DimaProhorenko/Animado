@@ -1,0 +1,78 @@
+@use '../abstracts/' as abs;
+
+.preloader {
+    @include abs.fixed(top 0 left 0);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: abs.$body-bg;
+    z-index: 1000;
+    transition: opacity abs.$duration abs.$timing, translate 100ms linear abs.$duration;
+
+    &--hidden {
+        opacity: 0;
+        translate: 0 -100%;
+    }
+
+    &__circle {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        transform-style: preserve-3d;
+        perspective: 400px;
+    }
+
+    &__arc {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border-bottom: 5px solid abs.$clr-primary;
+
+        &:nth-child(1) {
+            animation: rotate1 1.15s linear infinite;
+            animation-delay: .8s;
+        }
+
+        &:nth-child(2) {
+            animation: rotate2 1.15s linear infinite;
+            animation-delay: .4s;
+        }
+        
+        &:nth-child(3) {
+            animation: rotate3 1.15s linear infinite;
+            animation-delay: 0;
+        }
+    }
+    
+}
+
+@keyframes rotate1 {
+    from {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0);
+    }
+    to {
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(1turn);
+    }
+}
+@keyframes rotate2 {
+    from {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0);
+    }
+    to {
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(1turn);
+    }
+}
+@keyframes rotate3 {
+    from {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(0);
+    }
+    to {
+        transform: rotateX(35deg) rotateY(55deg) rotateZ(1turn);
+    }
+}

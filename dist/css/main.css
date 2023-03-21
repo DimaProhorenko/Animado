@@ -1,0 +1,283 @@
+@font-face {
+  font-family: "Poppins-Bold";
+  font-weight: 700;
+  src: url("../assets/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  font-weight: 400;
+  src: url("../assets/fonts/Poppins-Regular.ttf");
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Poppins-Regular";
+  background-color: #121212;
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins-Bold";
+  line-height: 1;
+}
+
+a[aria-current=page] {
+  color: #ff7657;
+}
+
+p {
+  color: #787878;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.wrapper {
+  width: 90%;
+  max-width: 76.25rem;
+  margin-inline: auto;
+}
+
+.clr-primary {
+  color: #ff7657;
+}
+
+.preloader {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #121212;
+  z-index: 1000;
+  transition: opacity 300ms ease-in-out, translate 100ms linear 300ms;
+}
+.preloader--hidden {
+  opacity: 0;
+  translate: 0 -100%;
+}
+.preloader__circle {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  transform-style: preserve-3d;
+  perspective: 400px;
+}
+.preloader__arc {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-bottom: 5px solid #ff7657;
+}
+.preloader__arc:nth-child(1) {
+  animation: rotate1 1.15s linear infinite;
+  animation-delay: 0.8s;
+}
+.preloader__arc:nth-child(2) {
+  animation: rotate2 1.15s linear infinite;
+  animation-delay: 0.4s;
+}
+.preloader__arc:nth-child(3) {
+  animation: rotate3 1.15s linear infinite;
+  animation-delay: 0;
+}
+
+@keyframes rotate1 {
+  from {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0);
+  }
+  to {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(1turn);
+  }
+}
+@keyframes rotate2 {
+  from {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0);
+  }
+  to {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(1turn);
+  }
+}
+@keyframes rotate3 {
+  from {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0);
+  }
+  to {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(1turn);
+  }
+}
+.logo {
+  color: inherit;
+  font-size: 1.625rem;
+  font-family: "Poppins-Bold";
+  font-weight: 700;
+  line-height: 0.9;
+  text-transform: capitalize;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.1em;
+}
+.logo span {
+  display: inline-block;
+  margin-left: 0.1em;
+  font-size: 1.5em;
+}
+
+.burger {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3em;
+  transition: rotate 300ms ease-in-out;
+}
+.burger__line {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 300ms ease-in-out;
+}
+.burger__line--top {
+  transform-origin: top left;
+}
+.burger__line--bot {
+  transform-origin: bottom left;
+}
+.burger--open {
+  rotate: 360deg;
+}
+.burger--open .burger__line--top {
+  scale: 0.5 1;
+  rotate: -45deg;
+  translate: 0 0.4em;
+}
+.burger--open .burger__line--bot {
+  scale: 0.5 1;
+  rotate: 45deg;
+  translate: 0 -0.4em;
+}
+
+.header {
+  padding-block: 2em;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.header__nav {
+  top: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  padding: 2em;
+  background-color: #121212;
+  text-align: center;
+  scale: 1 0;
+  transform-origin: top center;
+  transition: scale 300ms ease-in-out;
+}
+.header__nav--open {
+  scale: 1;
+}
+.header__nav--open .header__link {
+  rotate: 0deg;
+}
+.header__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.header__link {
+  display: inline-block;
+  font-family: "Poppins-Bold";
+  font-size: 1.2rem;
+  color: inherit;
+  text-decoration: none;
+  text-transform: capitalize;
+  rotate: x 90deg;
+  transition: color 300ms ease-in-out, rotate 300ms ease-in-out 300ms;
+  transform-origin: top center;
+}
+.header__link:hover {
+  color: #ff7657;
+}
+
+/*# sourceMappingURL=main.css.map */

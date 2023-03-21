@@ -1,0 +1,19 @@
+@use '../abstracts/' as abs;
+
+.logo {
+    color: inherit;
+    font-size: abs.toRem(26);
+    font-family: abs.$ff-bold;
+    font-weight: 700;
+    line-height: .9;
+    text-transform: capitalize;
+    text-decoration: none;
+    display: inline-block;
+    padding: .1em;
+
+    span {
+        display: inline-block;
+        margin-left: .1em;
+        font-size: 1.5em;
+    }
+}
