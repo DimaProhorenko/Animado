@@ -1,0 +1,8 @@
+@use '../abstracts/' as abs;
+
+.features {
+    &__container {
+        max-width: abs.toRem(750);
+        margin-inline: auto;
+    }
+}

@@ -12,6 +12,12 @@
     }
 }
 
+.flex-ww {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
 .flex-half {
     display: flex;
     flex-direction: column;
@@ -43,6 +49,16 @@
 .lead {
     font-size: 1.0625rem;
     font-size: clamp(1.0625rem, 0.96rem + 0.45vw, 1.25rem);
+}
+
+.section {
+    &__title {
+        font-size: abs.toRem(37);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 1em;
+        letter-spacing: abs.toRem(10);
+    }
 }
 
 

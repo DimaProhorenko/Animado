@@ -1,0 +1,48 @@
+@use '../abstracts/' as abs;
+
+.feature {
+    padding: 2em;
+    text-align: center;
+    background-color: abs.$clr-light-black;
+    flex: 1;
+    min-width: abs.toRem(250);
+    max-width: abs.toRem(340);
+
+    @include abs.for-tablet-up {
+        text-align: right;
+    }
+
+    &:nth-child(even) {
+        @include abs.for-tablet-up {
+            text-align: left;
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background-color: abs.$clr-primary;
+        text-align: center;
+        line-height: 5rem;
+        font-size: 2rem;
+    }
+
+    &__title {
+        font-size: abs.toRem(24);
+        text-transform: capitalize;
+    }
+
+    &__info {
+        margin-block-end: 1rem;
+    }
+
+    &__link {
+        font-weight: 600;
+        font-family: abs.$ff-bold;
+        font-size: 1.2rem;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+}
