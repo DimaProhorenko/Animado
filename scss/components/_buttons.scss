@@ -1,0 +1,85 @@
+@use '../abstracts/' as abs;
+
+%btn {
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: .8em 1.2em;
+    border-radius: .5em;
+    text-decoration: none;
+    color: inherit;
+    background-color: abs.$clr-primary;
+    text-transform: capitalize;
+    font-family: abs.$ff-bold;
+    font-size: 1rem;
+}
+
+.btn {
+    @extend %btn;
+
+    &--btb {
+        position: relative;
+        overflow: hidden;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+                     
+        }
+
+        &::before {
+            width: 150%;
+            height: 150%;
+            @include abs.absolute-center();   
+            // background: linear-gradient(abs.$clr-primary, abs.$clr-secondary);
+            background: radial-gradient(circle, rgba(255,118,87,1) 0%, rgba(255,217,102,1) 100%);
+            z-index: -2;
+        }
+
+        &::after {
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            @include abs.absolute-center;
+            background-color: abs.$body-bg;
+            z-index: -1;
+            // opacity: 0;
+        }
+
+        &:hover {
+            background-color: transparent;
+
+            &::before {
+                animation: border-spin 4s linear infinite;
+            }
+        }
+
+        // &::before,
+        // &::after {
+        //     content: '';
+        //     width: 100%;
+        //     height: 2px;
+        //     background-color: inherit;
+        //     @include abs.absolute(left 0);
+        //     @include abs.transition(scale);
+        // }
+
+        // &::before {
+        //     top: 0;
+        // }
+
+        // &::after {
+        //     bottom: 0;
+        // }
+    }
+}
+
+@keyframes border-spin {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}

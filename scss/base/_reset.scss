@@ -54,6 +54,7 @@ h6 {
 
 a[aria-current=page] {
     color: abs.$clr-primary;
+    border-bottom: 2px solid abs.$clr-primary;
 }
 
 p {

@@ -21,6 +21,10 @@
         transform-origin: top center;
         @include abs.transition(scale);
 
+        @include abs.for-tablet-up {
+            all: unset;
+        }
+
         &--open {
             scale: 1;
 
@@ -34,6 +38,11 @@
         display: flex;
         flex-direction: column;
         gap: 1em;
+
+        @include abs.for-tablet-up {
+            flex-direction: row;
+            min-width: abs.toRem(510);
+        }
     }
 
     &__link {
@@ -46,6 +55,12 @@
         rotate: x 90deg;
         transition: color abs.$duration abs.$timing, rotate abs.$duration abs.$timing abs.$duration;
         transform-origin: top center;
+
+        @include abs.for-tablet-up {
+            rotate: 0deg;
+            transition: color abs.$duration abs.$timing;
+        }
+
         &:hover {
             color: abs.$clr-primary;
         }

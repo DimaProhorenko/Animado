@@ -1,13 +1,37 @@
 @use '../abstracts/' as abs;
 
 .wrapper {
-    width: 90%;
+    width: 95%;
     max-width: abs.$max-width;
     margin-inline: auto;
 }
 
+.phone-only {
+    @include abs.for-tablet-up {
+        display: none !important;
+    }
+}
+
 
 // Text
+
+.flow > *:where(:not(:first-child)) {
+    margin-block-start: 1em;
+}
+
+.title {
+    font-size: 2rem;
+    font-size: clamp(2rem, 1.83rem + 1.06vw, 2.5rem);
+    color: abs.$clr-primary;
+    line-height: 1.3;
+}
+
+.lead {
+    font-size: 1.0625rem;
+    font-size: clamp(1.0625rem, 0.96rem + 0.45vw, 1.25rem);
+}
+
+
 .clr-primary {
     color: abs.$clr-primary;
 }
