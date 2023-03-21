@@ -40,6 +40,12 @@
     @content;
 }
 
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @mixin for-phone {
     @media screen and (max-width: v.$bp-phone) { @content; }
 }

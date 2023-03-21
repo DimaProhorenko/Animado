@@ -1,0 +1,45 @@
+@use '../abstracts/' as abs;
+
+.about {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 2em;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        @include abs.for-tablet-up {
+            flex-direction: row;
+            align-items: center;
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+ 
+    &__image {
+        @include abs.flex-center;
+        background-color: abs.$clr-light-black;
+        min-width: abs.toRem(300);
+
+        @include abs.for-tablet-up {
+            filter: grayscale(1);
+            @include abs.transition(filter);
+
+            &:hover {
+                filter: grayscale(0);
+            }
+        }
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        font-size: clamp(1.5rem, 1.4rem + 0.3vw, 1.625rem);
+    }
+}

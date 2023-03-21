@@ -5,11 +5,12 @@
     text-align: center;
     background-color: abs.$clr-light-black;
     flex: 1;
-    min-width: abs.toRem(250);
-    max-width: abs.toRem(340);
+    min-width: abs.toRem(300);
 
     @include abs.for-tablet-up {
         text-align: right;
+        max-width: abs.toRem(380);
+
     }
 
     &:nth-child(even) {

@@ -1,9 +1,17 @@
 @use '../abstracts/' as abs;
 
+.section {
+    padding-block: 3em;
+}
+
 .wrapper {
     width: 95%;
     max-width: abs.$max-width;
     margin-inline: auto;
+
+    &--s {
+        max-width: abs.$max-width-s;
+    }
 }
 
 .phone-only {
@@ -51,12 +59,25 @@
     font-size: clamp(1.0625rem, 0.96rem + 0.45vw, 1.25rem);
 }
 
+.caption {
+    &::before {
+        content: attr(data-caption);
+        display: block;
+        font-weight: 400;
+        font-size: .7em;
+        font-family: abs.$ff-regular;
+        text-transform: capitalize;
+        color: abs.$clr-primary;
+        margin-block-end: 1em;
+    }
+}
+
 .section {
     &__title {
         font-size: abs.toRem(37);
         text-transform: uppercase;
         text-align: center;
-        margin-bottom: 1em;
+        margin-bottom: 2em;
         letter-spacing: abs.toRem(10);
     }
 }
