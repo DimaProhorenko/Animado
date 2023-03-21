@@ -12,6 +12,20 @@
     }
 }
 
+.flex-half {
+    display: flex;
+    flex-direction: column;
+
+    @include abs.for-tablet-up {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    & > * {
+        flex: 1;
+    }
+}
+
 
 // Text
 
