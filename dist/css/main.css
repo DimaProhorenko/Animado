@@ -114,6 +114,14 @@ select {
   }
 }
 
+.flex {
+  display: flex;
+}
+
+.js-sb {
+  justify-content: space-between;
+}
+
 .flex-ww {
   display: flex;
   flex-wrap: wrap;
@@ -440,6 +448,64 @@ select {
 }
 .progress__el {
   opacity: 0;
+}
+
+.chart {
+  width: 30%;
+  max-width: 5.9375rem;
+  isolation: isolate;
+}
+.chart__progress {
+  opacity: 0;
+}
+.chart__label {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1;
+  color: #787878;
+  margin-block-start: 1em;
+  text-align: center;
+}
+.chart__num {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  translate: -50% -50%;
+  z-index: 2;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Poppins-Regular";
+  color: #ff7657;
+}
+.chart__bar {
+  width: 100%;
+  aspect-ratio: 1;
+  box-shadow: inset 0 0 0 5px #161616;
+  border-radius: 50%;
+  position: relative;
+}
+.chart__bar::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: conic-gradient(#ff7657 calc(var(--chart-value) * 1%), transparent 0);
+}
+.chart__bar::after {
+  content: "";
+  display: block;
+  width: calc(100% - 10px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #121212;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  translate: -50% -50%;
 }
 
 .header {

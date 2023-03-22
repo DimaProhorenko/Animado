@@ -177,6 +177,7 @@
                 <h3 class="about__title caption" data-caption="statistics">
                   Ratings
                 </h3>
+                <!-- Inline progress start -->
                 <div class="progress" style="--progress-value: 90%">
                   <label for="about-popular" class="progress__label"
                     >Popular</label
@@ -210,6 +211,26 @@
                     max="100"
                   ></progress>
                 </div>
+                <!-- Inline progress end -->
+
+                <!-- Chart start -->
+                <div class="flex jc-sb">
+                  <div class="chart" style="--chart-value: 80">
+                    <div class="chart__bar">
+                      <h4 class="chart__num">4.0</h4>
+                    </div>
+                    <label for="chart-users" class="chart__label"
+                      >Total users</label
+                    >
+                    <progress
+                      id="chart-users"
+                      class="chart__progress"
+                      value="80"
+                      max="100"
+                    ></progress>
+                  </div>
+                </div>
+                <!-- Chart end -->
               </div>
             </article>
             <article class="about__item">
