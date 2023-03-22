@@ -1,0 +1,61 @@
+@use '../abstracts/' as abs;
+
+.chart {
+    width: 30%;
+    max-width: abs.toRem(95);
+    isolation: isolate;
+
+    &__progress {
+        opacity: 0;
+    }
+
+    &__label {
+        display: block;
+        font-size: .8rem;
+        line-height: 1;
+        color: abs.$clr-text-light;
+        margin-block-start: 1em;
+        text-align: center;
+    }
+
+    &__num {
+        @include abs.absolute-center;
+        z-index: 2;
+        font-size: 1.2rem;
+        font-weight: 500;
+        font-family: abs.$ff-regular;
+        color: abs.$clr-primary;
+    }
+
+    &__bar {
+        width: 100%;
+        aspect-ratio: 1;
+        box-shadow: inset 0 0 0 abs.$chart-stroke-width abs.$clr-light-black;
+        border-radius: 50%;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            @include abs.absolute(top 0 left 0);
+            background: conic-gradient(
+                abs.$clr-primary calc(var(--chart-value) * 1%),
+                transparent 0
+            );
+            
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: calc(100% - abs.$chart-stroke-width * 2);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: abs.$body-bg;
+            @include abs.absolute-center;
+        }
+    }
+}

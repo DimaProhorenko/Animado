@@ -406,6 +406,42 @@ select {
   text-transform: capitalize;
 }
 
+.progress__bar {
+  position: relative;
+  height: 1rem;
+}
+.progress__bar::before, .progress__bar::after {
+  content: "";
+  display: block;
+  height: 100%;
+  border-radius: 1em;
+}
+.progress__bar::before {
+  width: 100%;
+  background-color: #161616;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.progress__bar::after {
+  width: var(--progress-value);
+  background-color: #ff7657;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.progress__label {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1;
+  color: #787878;
+  text-transform: capitalize;
+  margin-block-end: 0.5em;
+}
+.progress__el {
+  opacity: 0;
+}
+
 .header {
   padding-block: 2em;
   top: 0;

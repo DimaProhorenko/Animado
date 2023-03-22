@@ -1,0 +1,43 @@
+@use '../abstracts/' as abs;
+
+.progress {
+
+    &__bar {
+        position: relative;
+        height: 1rem;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            height: 100%;
+            border-radius: 1em;
+        }
+
+        &::before {
+            width: 100%;
+            background-color: abs.$clr-light-black;
+            @include abs.absolute(top 0 left 0);
+        }
+
+        &::after {
+            width: var(--progress-value);
+            background-color: abs.$clr-primary;
+            @include abs.absolute(top 0 left 0);
+        }
+    }
+
+
+    &__label {
+        display: block;
+        font-size: .8rem;
+        line-height: 1;
+        color: abs.$clr-text-light;
+        text-transform: capitalize;
+        margin-block-end: .5em;
+    }
+
+    &__el {
+        opacity: 0;
+    }
+}
