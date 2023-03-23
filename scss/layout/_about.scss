@@ -4,13 +4,12 @@
     &__container {
         display: flex;
         flex-direction: column;
-        align-items: center;
         row-gap: 2em;
     }
 
     &__item {
         display: flex;
-        flex-direction: column;
+        flex-flow: row wrap;
         gap: 2em;
 
         @include abs.for-tablet-up {
@@ -21,14 +20,24 @@
                 flex-direction: row-reverse;
             }
         }
+
+        &-info {
+            flex: 2 1 100%;
+
+            @include abs.for-tablet-up {
+                flex: 2 1 50%;
+            }
+        }
     }
  
     &__image {
         @include abs.flex-center;
+        flex: 1;
         background-color: abs.$clr-light-black;
-        min-width: abs.toRem(300);
+        min-width: abs.toRem(200);
 
         @include abs.for-tablet-up {
+            min-width: abs.toRem(300);
             filter: grayscale(1);
             @include abs.transition(filter);
 

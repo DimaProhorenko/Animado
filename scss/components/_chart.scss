@@ -2,11 +2,12 @@
 
 .chart {
     width: 30%;
-    max-width: abs.toRem(95);
+    max-width: abs.toRem(80);
     isolation: isolate;
 
     &__progress {
         opacity: 0;
+        width: 10px;
     }
 
     &__label {

@@ -122,6 +122,10 @@ select {
   justify-content: space-between;
 }
 
+.gap-2 {
+  gap: 2em;
+}
+
 .flex-ww {
   display: flex;
   flex-wrap: wrap;
@@ -448,15 +452,17 @@ select {
 }
 .progress__el {
   opacity: 0;
+  width: 10px;
 }
 
 .chart {
   width: 30%;
-  max-width: 5.9375rem;
+  max-width: 5rem;
   isolation: isolate;
 }
 .chart__progress {
   opacity: 0;
+  width: 10px;
 }
 .chart__label {
   display: block;
@@ -632,12 +638,11 @@ select {
 .about__container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   row-gap: 2em;
 }
 .about__item {
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
   gap: 2em;
 }
 @media screen and (min-width: 45rem) {
@@ -649,15 +654,25 @@ select {
     flex-direction: row-reverse;
   }
 }
+.about__item-info {
+  flex: 2 1 100%;
+}
+@media screen and (min-width: 45rem) {
+  .about__item-info {
+    flex: 2 1 50%;
+  }
+}
 .about__image {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
   background-color: #161616;
-  min-width: 18.75rem;
+  min-width: 12.5rem;
 }
 @media screen and (min-width: 45rem) {
   .about__image {
+    min-width: 18.75rem;
     filter: grayscale(1);
     transition: filter 300ms ease-in-out;
   }
