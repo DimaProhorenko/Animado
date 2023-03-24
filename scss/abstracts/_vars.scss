@@ -6,6 +6,7 @@ $body-bg: #121212;
 $clr-text: #fff;
 $clr-text-light: #787878;
 $clr-light-black: #161616;
+$clr-star: #fbaa33;
 $gradient1: #E4607E;
 $gradient2: #B25D95;
 $gradient3: #765D93;
@@ -19,6 +20,9 @@ $bp-desktop: f.toRem(1000);
 
 $max-width: f.toRem(1220);
 $max-width-s: f.toRem(800);
+
+$padding-sm: 3em;
+$padding-mid: 4em;
 
 // Fonts
 $ff-bold: 'Poppins-Bold';

@@ -1,7 +1,11 @@
 @use '../abstracts/' as abs;
 
 .section {
-    padding-block: 3em;
+    padding-block: abs.$padding-sm;
+
+    @include abs.for-desktop-up {
+        padding-block: abs.$padding-mid;
+    }
 }
 
 .wrapper {
@@ -20,12 +24,22 @@
     }
 }
 
+.card {
+    padding: 2em;
+    background-color: abs.$clr-light-black;
+    border-radius: 1em;
+}
+
 .flex {
     display: flex;
 }
 
-.js-sb {
+.jc-sb {
     justify-content: space-between;
+}
+
+.gap-1 {
+    gap: 1em;
 }
 
 .gap-2 {
@@ -89,8 +103,12 @@
         font-size: abs.toRem(37);
         text-transform: uppercase;
         text-align: center;
-        margin-bottom: 2em;
+        margin-bottom: abs.$padding-sm;
         letter-spacing: abs.toRem(10);
+
+        @include abs.for-desktop-up {
+            margin-bottom: abs.$padding-mid;
+        }
     }
 }
 

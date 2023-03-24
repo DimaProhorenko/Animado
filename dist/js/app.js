@@ -1,6 +1,24 @@
 const preloader = document.querySelector('.preloader');
 const burgerEl = document.querySelector('.burger');
 const headerNav = document.querySelector('.header__nav');
+const productSwiper = new Swiper('.product__slider', {
+    slidesPerView: 1,
+    autoplay: {
+        delay: 1000,
+    },
+    loop: true,
+    centeredSlides: true,
+    grabCursor: true,
+    spaceBetween: 20,
+      breakpoints: {
+        720: {
+            slidesPerView: 2,
+        },
+        1000: {
+            slidesPerView: 3,
+        }
+    }
+})
 
 
 burgerEl.addEventListener('click', () => {
