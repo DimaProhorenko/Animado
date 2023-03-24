@@ -1,0 +1,49 @@
+@use '../abstracts/' as abs;
+
+.pricing {
+
+    &__item {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    &__type {
+        font-size: abs.toRem(18);
+    }
+
+    &__price {
+        font-size: 2.5rem;
+        margin-top: .5em;
+
+        &::before,
+        &::after {
+            color: abs.$clr-primary;
+            font-size: .6em;
+            font-weight: 400;
+            font-family: abs.$ff-regular;
+        }
+
+        &::before {
+            content: '$';
+            margin-inline-end: .25em;
+        }
+
+        &::after {
+            content: '/mon';
+            margin-inline-start: .25em;
+        }
+    }
+
+    &__pros {
+        text-align: left;
+    }
+
+    &__icon {
+        color: abs.$clr-primary;
+        margin-inline-end: .5em;
+    }
+
+    &__btn {
+        margin-top: 2em;
+    }
+}

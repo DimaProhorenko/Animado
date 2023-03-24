@@ -130,6 +130,10 @@ select {
   display: flex;
 }
 
+.jc-center {
+  justify-content: center;
+}
+
 .jc-sb {
   justify-content: space-between;
 }
@@ -204,6 +208,14 @@ select {
 
 .clr-primary {
   color: #ff7657;
+}
+
+.grayscale {
+  filter: grayscale(1);
+  transition: filter 300ms ease-in-out;
+}
+.grayscale:hover {
+  filter: grayscale(0);
 }
 
 .preloader {
@@ -386,6 +398,14 @@ select {
 }
 .btn--btb:hover::before {
   animation: border-spin 4s linear infinite;
+}
+.btn--white {
+  background-color: #fff;
+  color: #161616;
+  transition: opacity 300ms ease-in-out;
+}
+.btn--white:hover {
+  opacity: 0.8;
 }
 
 @keyframes border-spin {
@@ -771,6 +791,58 @@ select {
 }
 .product__star {
   color: #fbaa33;
+}
+
+.team__item {
+  min-width: 21.875rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.team__img {
+  border: 5px solid #ff7657;
+  border-radius: 30% 84% 28% 76%/87% 23% 69% 29%;
+  max-width: 15.625rem;
+}
+.team__title {
+  font-size: 1.625rem;
+}
+
+.pricing__item {
+  flex-basis: 100%;
+  text-align: center;
+}
+.pricing__type {
+  font-size: 1.125rem;
+}
+.pricing__price {
+  font-size: 2.5rem;
+  margin-top: 0.5em;
+}
+.pricing__price::before, .pricing__price::after {
+  color: #ff7657;
+  font-size: 0.6em;
+  font-weight: 400;
+  font-family: "Poppins-Regular";
+}
+.pricing__price::before {
+  content: "$";
+  margin-inline-end: 0.25em;
+}
+.pricing__price::after {
+  content: "/mon";
+  margin-inline-start: 0.25em;
+}
+.pricing__pros {
+  text-align: left;
+}
+.pricing__icon {
+  color: #ff7657;
+  margin-inline-end: 0.5em;
+}
+.pricing__btn {
+  margin-top: 2em;
 }
 
 /*# sourceMappingURL=main.css.map */

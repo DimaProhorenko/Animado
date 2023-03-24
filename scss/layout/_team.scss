@@ -1,0 +1,22 @@
+@use '../abstracts/' as abs;
+
+.team {
+
+    &__item {
+        min-width: abs.toRem(350);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__img {
+        border: 5px solid abs.$clr-primary;
+        border-radius: 30% 84% 28% 76% / 87% 23% 69% 29%;
+        max-width: abs.toRem(250);
+    }
+
+    &__title {
+        font-size: abs.toRem(26);
+    }
+}

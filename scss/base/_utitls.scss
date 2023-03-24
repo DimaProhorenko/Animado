@@ -34,6 +34,10 @@
     display: flex;
 }
 
+.jc-center {
+    justify-content: center;
+}
+
 .jc-sb {
     justify-content: space-between;
 }
@@ -115,4 +119,15 @@
 
 .clr-primary {
     color: abs.$clr-primary;
+}
+
+
+
+.grayscale {
+    filter: grayscale(1);
+    @include abs.transition(filter);
+    
+    &:hover {
+        filter: grayscale(0);
+    }
 }

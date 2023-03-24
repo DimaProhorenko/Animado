@@ -58,38 +58,18 @@
                 animation: border-spin 4s linear infinite;
             }
         }
+    }
 
-        // &::before,
-        // &::after {
-        //     content: '';
-        //     width: 100%;
-        //     height: 2px;
-        //     background-color: inherit;
-        //     @include abs.absolute(left 0);
-        //     @include abs.transition(scale);
-        // }
+    &--white {
+        background-color: #fff;
+        color: abs.$clr-light-black;
+        @include abs.transition(opacity);
 
-        // &::before {
-        //     top: 0;
-        // }
-
-        // &::after {
-        //     bottom: 0;
-        // }
+        &:hover {
+            opacity: .8;
+        }
     }
 }
-
-// @keyframes border-spin {
-//     0% {
-//         background-position: 0 0;
-//     }
-//     50% {
-//         background-position: 400% 0;
-//     }
-//     100% {
-//         background-position: 0 0;
-//     }
-// }
 
 @keyframes border-spin {
     from {
