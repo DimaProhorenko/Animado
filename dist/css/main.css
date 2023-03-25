@@ -587,12 +587,11 @@ select {
   color: #fbaa33;
 }
 
-.form {
-  max-width: 28.125rem;
+.form > *:where(* + *) {
+  margin-block-start: 2em;
 }
 .form__control {
   position: relative;
-  margin-block: 2em;
 }
 .form__control:focus-within .form__label, .form__control:has(.form__input:valid) .form__label {
   top: 0;
@@ -635,6 +634,34 @@ select {
   position: absolute;
   translate: 0 -50%;
   color: #ff7657;
+}
+
+.accordion {
+  padding: 0;
+}
+.accordion__item {
+  padding: 1em;
+}
+.accordion__item--active .accordion__collapse {
+  display: block;
+}
+.accordion__btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  color: inherit;
+  text-align: left;
+  padding-block: 1em;
+}
+.accordion__title {
+  color: #ff7657;
+  font-size: 1.2rem;
+}
+.accordion__collapse {
+  display: none;
 }
 
 .header {
@@ -951,6 +978,33 @@ select {
 .review__date {
   color: #787878;
   margin-block-start: 0.5em;
+}
+
+.contact__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+@media screen and (min-width: 62.5rem) {
+  .contact__container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+.contact__item {
+  flex: 1;
+}
+.contact__item--faq {
+  background-color: #161616;
+}
+@media screen and (min-width: 62.5rem) {
+  .contact__item--faq {
+    flex: 2;
+  }
+}
+.contact__item--ask {
+  max-width: 28.125rem;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,38 @@
+@use '../abstracts/' as abs;
+
+.accordion {
+    padding: 0;
+    &__item {
+        padding: 1em;
+
+        &--active {
+            .accordion__collapse {
+                display: block;
+            }
+        }
+        // & + & {
+        //     margin-block-start: 2em;
+        // }
+    }
+
+    &__btn {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        color: inherit;
+        text-align: left;
+        padding-block: 1em;
+    }
+
+    &__title {
+        color: abs.$clr-primary;
+        font-size: 1.2rem;
+    }
+
+    &__collapse {
+        display: none;
+    }
+}

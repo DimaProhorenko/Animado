@@ -1,0 +1,30 @@
+@use '../abstracts/' as abs;
+
+.contact {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+
+        @include abs.for-desktop-up {
+            flex-direction: row;
+            align-items: stretch;
+        }
+    }
+
+    &__item {
+        flex: 1;
+
+        &--faq {
+            background-color: abs.$clr-light-black;
+            @include abs.for-desktop-up {
+                flex: 2;
+            }
+        }
+
+        &--ask {
+            max-width: abs.toRem(450);
+        }
+    }
+}

@@ -1,6 +1,9 @@
 const preloader = document.querySelector('.preloader');
 const burgerEl = document.querySelector('.burger');
 const headerNav = document.querySelector('.header__nav');
+const faqAccordion = document.querySelector('#contact__accordion');
+const faqAccordionItems = document.querySelectorAll('.contact .accordion__item');
+
 const productSwiper = new Swiper('.product__slider', {
     slidesPerView: 1,
     autoplay: {
@@ -44,4 +47,19 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         preloader.classList.add('preloader--hidden')
     }, 3000)
+})
+
+faqAccordion.addEventListener('click', e => {
+    const clickedEl = e.target;
+    let parentEl = null;
+
+    if (clickedEl.classList.contains('accordion__btn')) {
+        parentEl = clickedEl.closest('.accordion__item');
+        console.log(parentEl);
+    }
+
+    if (parentEl && !parentEl.classList.contains('accordion__item--active')) {
+        faqAccordionItems.forEach(el => el.classList.remove('accordion__item--active'));
+        parentEl.classList.add('accordion__item--active');
+    }
 })

@@ -1,11 +1,18 @@
 @use '../abstracts/' as abs;
 
 .form {
-    max-width: abs.toRem(450);
+
+    & > *:where(* + *) {
+        margin-block-start: 2em;
+    }
 
     &__control {
         position: relative;
-        margin-block: 2em;
+        
+        // & + .form__control {
+        //     margin-block-start: 2em;
+        // }
+
         &:focus-within,
         &:has(.form__input:valid) {
             .form__label {
