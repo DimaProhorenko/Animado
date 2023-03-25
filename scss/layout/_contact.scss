@@ -14,17 +14,25 @@
     }
 
     &__item {
-        flex: 1;
+        flex: 2;
+        width: 100%;
 
         &--faq {
             background-color: abs.$clr-light-black;
+            border-radius: 1em;
+
+            @include abs.for-tablet-up {
+                max-width: abs.toRem(500);
+            }
+
             @include abs.for-desktop-up {
-                flex: 2;
+                max-width: unset;
+                flex: 3;
             }
         }
 
         &--ask {
-            max-width: abs.toRem(450);
+            max-width: abs.toRem(500);
         }
     }
 }

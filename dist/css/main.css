@@ -618,7 +618,7 @@ select {
   display: inline-block;
   border: 1px solid #787878;
   background-color: #161616;
-  border-radius: 2em;
+  border-radius: 1em;
   width: 100%;
   padding: 0.5em 2em;
   color: #fff;
@@ -626,6 +626,9 @@ select {
 }
 .form__input:hover, .form__input:focus, .form__input:valid {
   border-color: #ff7657;
+}
+.form__textarea {
+  padding-block: 0;
 }
 .form__icon {
   display: block;
@@ -993,18 +996,26 @@ select {
   }
 }
 .contact__item {
-  flex: 1;
+  flex: 2;
+  width: 100%;
 }
 .contact__item--faq {
   background-color: #161616;
+  border-radius: 1em;
+}
+@media screen and (min-width: 45rem) {
+  .contact__item--faq {
+    max-width: 31.25rem;
+  }
 }
 @media screen and (min-width: 62.5rem) {
   .contact__item--faq {
-    flex: 2;
+    max-width: unset;
+    flex: 3;
   }
 }
 .contact__item--ask {
-  max-width: 28.125rem;
+  max-width: 31.25rem;
 }
 
 /*# sourceMappingURL=main.css.map */
