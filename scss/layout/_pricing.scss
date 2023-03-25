@@ -3,8 +3,21 @@
 .pricing {
 
     &__item {
-        flex-basis: 100%;
+        flex: 1;
+        min-width: abs.toRem(250);
         text-align: center;
+
+        @include abs.for-tablet-up {
+            max-width: abs.toRem(350);
+        }
+
+        &--selected {
+            border: 2px solid abs.$clr-primary;
+
+            & .pricing__type {
+                color: abs.$clr-primary;
+            }
+        }
     }
 
     &__type {

@@ -18,6 +18,20 @@ const productSwiper = new Swiper('.product__slider', {
             slidesPerView: 3,
         }
     }
+});
+
+const reviewSwiper = new Swiper('.review__swiper', {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: {
+        delay: 2000
+    },
+    spaceBetween: 20,
+    breakpoints: {
+        720: {
+            slidesPerView: 2,
+        }
+    }
 })
 
 

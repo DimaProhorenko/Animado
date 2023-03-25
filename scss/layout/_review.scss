@@ -1,0 +1,27 @@
+@use '../abstracts/' as abs;
+
+.review {
+
+    &__comment {
+        font-size: abs.toRem(18);
+        padding-block-end: 2em;
+        border-block-end: 2px dashed abs.$clr-text-light;
+        margin-block-end: 2em; 
+    }
+
+    &__user {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+    }
+
+    &__name {
+        font-size: 1.2rem;
+        margin-block-end: .5em;
+    }
+
+    &__date {
+        color: abs.$clr-text-light;
+        margin-block-start: .5em;
+    }
+}

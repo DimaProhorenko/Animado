@@ -1,0 +1,10 @@
+@use '../abstracts/' as abs;
+
+.stars {
+    display: flex;
+    column-gap: .3em;
+
+    &__item {
+        color: abs.$clr-star;
+    }
+}
