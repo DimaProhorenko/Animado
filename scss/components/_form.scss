@@ -1,0 +1,59 @@
+@use '../abstracts/' as abs;
+
+.form {
+    max-width: abs.toRem(450);
+
+    &__control {
+        position: relative;
+        margin-block: 2em;
+        &:focus-within,
+        &:has(.form__input:valid) {
+            .form__label {
+                top: 0;
+                color: abs.$clr-primary;
+                background-color: abs.$clr-light-black;
+                border-inline: 2px solid abs.$clr-primary;
+                scale: .8;
+            }
+        }
+    }
+
+    &__label {
+        display: inline-block;
+        position: absolute;
+        padding-inline: .3em;
+        top: 50%;
+        left: 2em;
+        translate: 0 -50%;
+        transition-property: color, scale, top;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out;
+    }
+
+    &__input {
+        outline: none;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        border: 1px solid abs.$clr-text-light;
+        background-color: abs.$clr-light-black;
+        border-radius: 2em;
+        width: 100%;
+        padding: .5em 2em;
+        color: abs.$clr-text;
+        @include abs.transition(border-color);
+
+        &:hover,
+        &:focus,
+        &:valid {
+            border-color: abs.$clr-primary;
+        }
+    }
+
+    &__icon {
+        display: block;
+        @include abs.absolute(top 50% left .5em);
+        translate: 0 -50%;
+        color: abs.$clr-primary;
+    }
+}
